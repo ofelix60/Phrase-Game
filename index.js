@@ -9,3 +9,6 @@ for (let letter of debugPhrase) {
 		htmlString += `<li class="space"></li>`;
 	}
 }
+
+const phraseBox = document.querySelector('#phrase ul');
+phraseBox.innerHTML = htmlString;
