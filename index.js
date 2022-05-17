@@ -46,5 +46,6 @@ document.addEventListener('keypress', e => {
 		} else {
 			console.log('no');
 		}
+		btn.disabled = true;
 	});
 });
