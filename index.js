@@ -1,10 +1,11 @@
 const debugPhrase = 'Hello World';
 const phraseBox = document.querySelector('#phrase ul');
 const phraseItems = document.getElementsByTagName('li');
+const letterBtns = document.getElementsByTagName('button');
 
 // checks for duplicate letters in a single word
 const getAllIndexes = function (arr, val) {
-	var indexes = [];
+	let indexes = [];
 	for (let i = 0; i < arr.length; i++) {
 		if (arr[i] === val) indexes.push(i);
 	}
@@ -32,4 +33,18 @@ document.addEventListener('keypress', e => {
 	} else {
 		console.log('no');
 	}
+});
+
+// Listens for on-screen button click and displays all instances of letter in phrase
+[...letterBtns].forEach(btn => {
+	btn.addEventListener('click', () => {
+		if (debugPhrase.toLowerCase().includes(btn.innerText)) {
+			let index = getAllIndexes([...debugPhrase.toLowerCase()], btn.innerText);
+			for (const i of index) {
+				phraseItems[i].classList.add('show');
+			}
+		} else {
+			console.log('no');
+		}
+	});
 });
