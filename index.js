@@ -10,10 +10,11 @@ const phraseItems = document.getElementsByTagName('li');
 const letterBtns = document.getElementsByTagName('button');
 
 //a function that returns random integer between two values.
-function getRandomInt(min, max) {
-	min = Math.ceil(min);
-	max = Math.floor(max);
-	return Math.floor(Math.random() * (max - min + 1) + min);
+
+function getRandomPhrase(arr) {
+	return debugPhraseArray[
+		Math.floor(Math.random() * (debugPhraseArray.length - 1 - 0 + 1) + 0)
+	];
 }
 
 // a function that displays any string/phrase in blank boxes on the screen
@@ -27,7 +28,7 @@ function phraseDisplay(phrase) {
 	}
 	phraseBox.innerHTML = htmlString;
 }
-let gamePhrase = debugPhraseArray[getRandomInt(0, debugPhraseArray.length - 1)];
+let gamePhrase = getRandomPhrase(debugPhraseArray);
 phraseDisplay(gamePhrase);
 
 // a function that checks if phrase is completed
