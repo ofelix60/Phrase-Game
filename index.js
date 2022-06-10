@@ -13,9 +13,7 @@ const lives = document.getElementsByTagName('span');
 //a function that returns random integer between two values.
 
 function getRandomPhrase(arr) {
-	return debugPhraseArray[
-		Math.floor(Math.random() * (debugPhraseArray.length - 1 - 0 + 1) + 0)
-	];
+	return arr[Math.floor(Math.random() * arr.length)];
 }
 
 // a function that displays any string/phrase in blank boxes on the screen
