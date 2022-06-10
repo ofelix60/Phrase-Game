@@ -8,6 +8,7 @@ const debugPhraseArray = [
 const phraseBox = document.querySelector('#phrase ul');
 const phraseItems = document.getElementsByTagName('li');
 const letterBtns = document.getElementsByTagName('button');
+const lives = document.getElementsByTagName('span');
 
 //a function that returns random integer between two values.
 
@@ -39,16 +40,33 @@ function winChecker() {
 	}
 }
 
+function takeDamage() {
+	for (let life of lives) {
+		if (life.classList.contains('hide')) {
+			continue;
+		} else {
+			life.classList.add('hide');
+			break;
+		}
+	}
+}
+
 // Listens for on-screen button click and displays all instances of letter in phrase
 document.getElementById('qwerty').addEventListener('click', e => {
+	let damage = true;
 	if (e.target.tagName === 'BUTTON') {
 		for (let box of phraseItems) {
-			if (e.target.innerText == box.innerText) {
+			if (e.target.innerText === box.innerText) {
 				box.classList.add('show');
 				winChecker();
+				damage = false;
 			}
 		}
 	}
+	if (damage === true) {
+		takeDamage();
+	}
+	damage = true;
 	e.target.disabled = true;
 });
 
