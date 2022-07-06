@@ -121,30 +121,8 @@ button {
 	font-size: var(--font-size-medium);
 }
 
-
 /* Lives */
 
-.lives {
-	position: relative;
-	/* width: 100px;
-	height: 100px;
-	border: 1px solid red; */
-}
-/* span {
-	position: relative;
-} */
-
-.damage {
-	position: absolute;
-    width: 120px;
-    height: 100px;
-}
-
-.health {
-	position: absolute;
-    width: 120px;
-    height: 100px;
-}
 .hide {
 	display: none;
 }

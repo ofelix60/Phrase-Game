@@ -39,20 +39,14 @@ function winChecker() {
 }
 
 function takeDamage() {
-	for (let i = 0; i < lives.length; i++) {
-		if (!lives[i].classList.contains('hide')) {
-			lives[i].classList.add('hide');
+	for (let life of lives) {
+		if (life.classList.contains('hide')) {
+			continue;
+		} else {
+			life.classList.add('hide');
 			break;
 		}
 	}
-	// for (let life of lives) {
-	// 	if (life.classList.contains('hide')) {
-	// 		continue;
-	// 	} else {
-	// 		life.classList.add('hide');
-	// 		break;
-	// 	}
-	// }
 }
 
 // Listens for on-screen button click and displays all instances of letter in phrase
@@ -82,5 +76,3 @@ document.addEventListener('keypress', e => {
 		}
 	}
 });
-
-// awsome code AI ACHIEVED.
