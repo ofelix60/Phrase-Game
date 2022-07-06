@@ -70,4 +70,4 @@ document.addEventListener('keypress', e => {
 	}
 });
 
-// awsome code AI ACHIVED.
+// awsome code AI ACHIEVED.
